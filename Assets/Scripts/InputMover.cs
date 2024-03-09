@@ -29,7 +29,9 @@ public class InputMover : MonoBehaviour
 
     [Tooltip("Button to pick up")]
     [SerializeField]
-   // private KeyCode pickUp;     
+   // private KeyCode pickUp;   
+
+    [SerializeField] int flipChar = -1;
      
     private bool isJumping = false;
 
@@ -79,7 +81,7 @@ public class InputMover : MonoBehaviour
             facingRight = !facingRight;
 
             Vector3 theScale = transform.localScale;
-            theScale.x *= -1;
+            theScale.x *= flipChar;
             transform.localScale = theScale;
         }
     }
