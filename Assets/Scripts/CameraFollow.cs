@@ -8,6 +8,7 @@ public class CameraFollow : MonoBehaviour
      [SerializeField] private float yMax;
      [SerializeField] private float xMin;
      [SerializeField] private float yMin;
+     [SerializeField] private float offset = -10f;
 
 
      private Transform target;  // target will be the player
@@ -23,7 +24,7 @@ public class CameraFollow : MonoBehaviour
         if (target)
         {
         // limits the camera outlook by the limits defined
-            transform.position = new Vector3(Mathf.Clamp(target.position.x, xMin, xMax), Mathf.Clamp(target.position.y, yMin, yMax), -10f);
+            transform.position = new Vector3(Mathf.Clamp(target.position.x, xMin, xMax), Mathf.Clamp(target.position.y, yMin, yMax), offset);
         }
     }
 
